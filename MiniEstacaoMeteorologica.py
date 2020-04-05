@@ -26,7 +26,7 @@ def login_open_sheet(spreadsheet):
 	try:
 		scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
-		credentials = Credentials.from_service_account_file('D:\\python\\Estacao\\estacao-meteorologica-273314-973d6bcbd34f.json',scopes=scope)
+		credentials = Credentials.from_service_account_file('/Topicos_Industria_4.0_Estacao_Meteorologica/certificado.json',scopes=scope)
 		gc = gspread.authorize(credentials)
 		worksheet = gc.open(spreadsheet).sheet1
 		return worksheet
