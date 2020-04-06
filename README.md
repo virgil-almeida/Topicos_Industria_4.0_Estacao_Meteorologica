@@ -14,3 +14,5 @@ https://gspread.readthedocs.io/en/latest/oauth2.html
 https://bigl.es/ds18b20-temperature-sensor-with-python-raspberry-pi/
 
 https://github.com/MichaIng/DietPi/issues/3067
+
+https://www.filipeflop.com/blog/temperatura-umidade-dht11-com-raspberry-pi/
