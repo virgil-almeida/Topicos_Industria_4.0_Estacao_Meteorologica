@@ -9,3 +9,6 @@ Estação Meteorológica com Raspberry e Google Planilhas
 # Fontes utilizadas #
 https://www.hackster.io/idreams/make-a-mini-weather-station-with-a-raspberry-pi-447866
 https://gspread.readthedocs.io/en/latest/oauth2.html
+
+https://bigl.es/ds18b20-temperature-sensor-with-python-raspberry-pi/
+https://github.com/MichaIng/DietPi/issues/3067
