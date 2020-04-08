@@ -9,7 +9,6 @@ import requests
 import random
 
 # libraries
-import sys
 import urllib.request #pip install urllib
 import gspread #pip install gspread
 from google.oauth2.service_account import Credentials
