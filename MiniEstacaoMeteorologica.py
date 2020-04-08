@@ -1,5 +1,4 @@
-#!/usr/bin/python
-
+import os
 import json
 import sys
 import time
@@ -19,12 +18,12 @@ from datetime import datetime
 #ativa impressão local
 DEBUG = 1
 # DADOS DO openweathermap
-CITY_ID = '3470044' #Betim
-API_KEY = 'SUA_KEY' #TODO: Trocar para a sua api key do openweathermap
+CITY_ID = os.environ['CITY_ID_OPENWEATHERMAP']
+API_KEY = os.environ['API_KEY_OPENWEATHERMAP'] #TODO: Trocar para a sua api key do openweathermap
 
 # Nome da planilha no google.
-GDOCS_SPREADSHEET_NAME = 'Estacao_Meteorologica'
-GOOGLE_KEY = '' #TODO: Diretorio onde está o json do sua Contas de serviço Google
+GDOCS_SPREADSHEET_NAME = os.environ['GDOCS_SPREADSHEET_NAME']
+GOOGLE_KEY = os.environ['GOOGLE_KEY_DIR'] #TODO: Diretorio onde está o json do sua Contas de serviço Google
 # Intervalo de leitura.
 FREQUENCY_SECONDS = 30
 
@@ -72,10 +71,7 @@ if DEBUG:
 
 worksheet = None
 while True:
-	# Realiza o login caso necessário.
-	if worksheet is None:
-		worksheet = login_open_sheet(GDOCS_SPREADSHEET_NAME)
-
+	
 	#Ler valores do openweather
 	openweathermap = read_openweathermap(CITY_ID,API_KEY)
 
@@ -106,6 +102,10 @@ while True:
 							str(openweathermap[2]) +
 				"\n Descrição = " +
 							str(openweathermap[3])) 
+
+	# Realiza o login caso necessário.
+	if worksheet is None:
+		worksheet = login_open_sheet(GDOCS_SPREADSHEET_NAME)
 
 	# Incluir os dados coletados na planilha
 	try:
