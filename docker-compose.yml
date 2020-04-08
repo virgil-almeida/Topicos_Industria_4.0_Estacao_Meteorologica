@@ -1,0 +1,8 @@
+version: '3.3'
+
+services: 
+    estacao:
+        build: .
+        restart: always
+        volumes: 
+            - ./certificados:/Topicos_Industria_4.0_Estacao_Meteorologica/certificados
